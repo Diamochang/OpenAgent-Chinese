@@ -24,11 +24,11 @@ def chain_name_to_id(chain_name: str) -> str:
 
 @cached(ttl=60, cache=Cache.MEMORY)
 async def cached_get(chain_id: str):
-    logger.info("Attempting to retrieve data for https://li.quest/v1/tokens")
+    logger.info("正在尝试从 https://li.quest/v1/tokens 获取数据...")
 
     url = """https://li.quest/v1/tokens"""
     headers = {"Accept": "application/json"}
-    logger.info(f"Fetching new data from {url}")
+    logger.info(f"正在从 {url} 获取新数据...")
     async with aiohttp.ClientSession() as session:
         async with session.get(url, headers=headers) as response:
             token_list = await response.json()
@@ -69,7 +69,7 @@ async def get_token_by_address(address: str) -> dict:
             reverse=True,
         )
         return dict(results[0])
-    raise Exception("Token not found")
+    raise Exception("未找到代币")
 
 
 async def select_best_token(keyword, chain_id) -> dict | None:

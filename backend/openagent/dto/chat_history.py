@@ -33,7 +33,7 @@ class ChatMessageRole(str, Enum):
             return ChatMessageRole.human
         if type0 == "tool":
             return ChatMessageRole.ai
-        raise ValueError(f"Unknown role: {type0}")
+        raise ValueError(f"未定义的角色：{type0}")
 
 
 class ChatMessageContent(BaseModel):  # type: ignore

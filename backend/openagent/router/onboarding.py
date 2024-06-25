@@ -9,32 +9,33 @@ from sse_starlette import EventSourceResponse
 from openagent.dto.chat_req import ChatReq
 from openagent.dto.chat_resp import ChatResp
 
-onboarding_router = APIRouter(tags=["Onboarding"])
+onboarding_router = APIRouter(tags=["入门指南"])
 
 introduction_text = """\
-Hey there, digital explorer! 🚀 I'm OpenAgent, your trusty sidekick in the vast and vibrant universe of web3! 🌐✨
+嗨，数字探索者！🚀 我是 OpenAgent，是你在广阔而充满活力的 Web3 宇宙中的得力助手！🌐✨
 
-What can I do, you ask? Well, buckle up because I'm here to navigate you through the cosmic maze of blockchain networks, tokens, NFTs, and decentralized applications (dApps). Whether you're looking to trade some tokens, transfer some crypto to your buddy, or just curious about the latest NFT craze, I've got your back!
+想知道我能做些什么吗？那就系好安全带，因为我将带你穿越区块链网络、代币、NFT 和去中心化应用（即 dApps）的宇宙迷宫。无论你是想交易一些代币、向朋友转账加密货币，还是仅仅对最新的 NFT 热潮感到好奇，我都为你保驾护航！
 
-Here's a quick rundown of my superpowers:
+以下是我的一些超能力简介：
 
-- **Token Transfer**: Need to send some USDC to a friend? I'll guide your transaction to its destination faster than a shooting star! 🌠💸
-- **Blockchain Intel**: Curious about the gas prices on Ethereum or the block height on Binance Smart Chain? I'll fetch that info like a space hound chasing a comet! 🐕🌠
-- **NFT Insights**: Wondering what's hot in the NFT universe? I'll bring you market caps, floor prices, and the most popular NFTs out there! 🖼️📈
-- **DApp Discovery**: Looking for the next DeFi gem or a social dApp to connect with fellow spacefarers? I'll be your guide to the decentralized cosmos! 🌌🔍
-- **Crypto Queries**: Got questions about token prices or market caps? I'm like a crypto-encyclopedia with the latest data! 📚💹
+- **代币交易**：需要向朋友发送一些 USDC 吗？我将比流星更快地指引你的交易到达目的地！🌠💸
+- **区块链情报**：对以太坊的燃料费或币安智能链的区块高度感到好奇吗？我会像追逐彗星的太空猎犬一样获取那些信息！🐕🌠
+- **NFT 洞察**：想知道 NFT 世界里哪些最热门吗？我将为你呈现市值、底价以及最热门的 NFT！🖼️📈
+- **DApp 探索**：寻找下一个 DeFi 宝物或社交 dApp 来连接太空同行者吗？我将成为你通往去中心化宇宙的向导！🌌🔍
+- **加密货币疑问**：有关代币价格或市值的问题吗？我就像一本拥有最新数据的加密货币百科全书！📚💹
 
-So, if you're ready to embark on a web3 adventure, just hit me up and let's make some interstellar magic happen! And remember, I'm here to keep things fun and lively, so don't be surprised if I drop a pun or two along the way! 🎉👾
+因此，如果你准备踏上 Web3 冒险之旅，只需联系我，让我们一起创造些星际魔法吧！记住，我在这里是为了让一切变得有趣活泼，所以路上丢一两个双关语别感到惊讶哦！🎉👾
 """  # noqa: E501
 
+# 建议提问列表
 suggested_questions = [
-    "What's the current gas price on Ethereum?",
-    "Can you show me the latest transactions for vitalik.eth?",
-    "What's the floor price of the Bored Ape Yacht Club NFT collection?",
-    "How much is 1 ETH in USDT right now?",
-    "Tell me about the defi project with the highest TVL.",
-    "Who are the popular users on Uniswap?",
-    "Can you help me transfer 0.1 $ETH to vitalik.eth?",
+    "当前以太坊的燃料费是多少？",
+    "能展示一下 vitalik.eth 最近的交易吗？",
+    "Bored Ape Yacht Club NFT 系列的底价是多少？",
+    "1 ETH 现在相当于多少 USDT？",
+    "告诉我 TVL 最高的 DeFi 项目。",
+    "Uniswap 上的热门用户是谁？",
+    "你能帮我向 vitalik.eth 转 0.1 ETH 吗？",
 ]
 
 
@@ -52,5 +53,5 @@ def generate_stream():
 
 @onboarding_router.post("/onboarding/", response_model=ChatResp)
 async def onboarding(req: ChatReq):
-    logger.info(f"Received request: req={req}")
+    logger.info(f"收到请求：req={req}")
     return EventSourceResponse(generate_stream())

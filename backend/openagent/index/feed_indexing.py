@@ -42,19 +42,19 @@ def index_feed(fetch_function, feed_name):
 
     cursor = None
     logger.info(
-        f"Starting to index feed '{feed_name}' from "
-        f"{since_date.strftime('%Y-%m-%d %H:%M:%S')} to"
+        f"开始索引订阅源 '{feed_name}'，时间范围从 "
+        f"{since_date.strftime('%Y-%m-%d %H:%M:%S')} 到"
         f" {curr_date.strftime('%Y-%m-%d %H:%M:%S')}"
     )
     while True:
         resp = fetch_function(since_ts, curr_ts, cursor=cursor)
         if resp["meta"] is None:
-            logger.info(f"no meta in response, done with {feed_name}!")
+            logger.info(f"响应中无元数据，已完成对 {feed_name} 的索引！")
             break
         cursor = resp["meta"]["cursor"]
         logger.info(
-            f"fetched {len(resp['data'])} records from {feed_name},"
-            f" next cursor: {cursor}"
+            f"从 {feed_name} 获取了 {len(resp['data'])} 条记录，"
+            f"下一次游标：{cursor}"
         )
 
         records = resp.get("data", [])
@@ -75,7 +75,7 @@ def save_records(records):
         cleanup="incremental",
         source_id_key="id",
     )
-    logger.info(f"Indexing result: {indexing_result}")
+    logger.info(f"索引结果：{indexing_result}")
 
 
 text_splitter = CharacterTextSplitter(
