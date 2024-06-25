@@ -14,15 +14,15 @@ from openagent.conf.env import settings
 
 class ParamSchema(BaseModel):
     address: str = Field(
-        description="""wallet address or blockchain domain name,\
-hint: vitalik's address is vitalik.eth"""
+        description = """钱包地址或区块链域名，\
+提示：Vitalik 的地址是 vitalik.eth"""
     )
 
 
 class FeedExpert(BaseTool):
-    name = "feed"
-    description = """Use this tool to get the activities of a wallet address or \
-blockchain domain name and know what this address has done or doing recently."""
+    name = "动态助手"
+    description = """使用此工具获取钱包地址或\
+区块链域名的活动动态，了解该地址最近的行为或正在进行的操作。"""
     args_schema: Type[ParamSchema] = ParamSchema
 
     def _run(

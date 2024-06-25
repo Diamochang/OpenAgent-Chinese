@@ -13,19 +13,17 @@ from openagent.index.pgvector_store import store
 
 class ARGS(BaseModel):
     keyword: str = Field(
-        description="keyword to search for",
+        description = "要搜索的关键词",
     )
 
 
 class ArticleExpert(BaseTool):
-    name = "article"
+    name = "文章助手"
     description = (
-        "A tool for searching web3-related articles. If you lack knowledge about web3, "
-        "you can use this tool to find relevant articles that can help answer "
-        "your questions. Provide a keyword or phrase related to the topic "
-        "you want to search for, and the tool will return a list of "
-        "relevant article excerpts. "
-        "The articles are sourced from IQWiki and Mirror."
+        "一个用于搜索与 Web3 相关文章的工具。如果你对 Web3 缺乏了解，"
+        "可以使用此工具查找有助于回答你问题的相关文章。提供与你想要搜索的主题相关的关键词或短语，"
+        "该工具将返回一系列相关文章的摘录。"
+        "文章来源于 IQWiki 和 Mirror。"
     )
     args_schema: Type[ARGS] = ARGS
 

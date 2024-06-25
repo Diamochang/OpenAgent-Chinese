@@ -14,31 +14,30 @@ from openagent.conf.env import settings
 
 class ARGS(BaseModel):
     action: str = Field(
-        description="Specify the operation to perform: 'search' for NFT "
-        "collection search, 'rank' for collection ranking"
+        description = "指定要执行的操作：'search' 表示 NFT "
+        "收藏品搜索，'rank' 表示收藏品排名"
     )
     keyword: Optional[str] = Field(
-        default=None,
-        description="NFT symbol or collection name, required only for 'action=search'",
+        default = None,
+        description = "NFT 符号或收藏品名称，仅在 'action=search' 时必需",
     )
     sort_field: Optional[str] = Field(
-        default="market_cap",
-        description="""
-Default is market_cap. Options include: volume_1d, volume_7d, volume_30d,
+        default = "market_cap",
+        description = """
+默认为 market_cap。选项包括：volume_1d, volume_7d, volume_30d,
 volume_total, volume_change_1d,
 volume_change_7d, volume_change_30d, sales_1d, sales_7d, sales_30d,
 sales_total, sales_change_1d,
 sales_change_7d, sales_change_30d,
-floor_price, market_cap. Required only for 'action=rank'
+floor_price, market_cap。仅在 'action=rank' 时必需
     """,
     )
 
 
 class NFTExpert(BaseTool):
-    name = "NFT"
-    description = "A tool for searching NFT collections or getting collection rankings."
+    name = "NFT 助手"
+    description = "一个用于搜索 NFT 收藏品或获取收藏品排名的工具。"
     args_schema: Type[ARGS] = ARGS
-
     def _run(
         self,
         action: str,
@@ -48,14 +47,14 @@ class NFTExpert(BaseTool):
     ) -> str:
         if action == "search":
             if keyword is None:
-                return "Error: A keyword is required for search operation."
+                return "错误：搜索操作需要关键词。"
             return self.search_nft_collections(keyword)
         elif action == "rank":
             return self.collection_ranking(sort_field)
         else:
             return (
-                "Error: Unknown operation type. "
-                "Please specify 'action' as 'search' or 'rank'."
+                "错误：未知的操作类型。 "
+                "请将 'action' 指定为 'search' 或 'rank'。"
             )
 
     async def _arun(

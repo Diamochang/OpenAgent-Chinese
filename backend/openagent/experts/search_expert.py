@@ -13,19 +13,19 @@ from openagent.conf.env import settings
 
 
 class SearchSchema(BaseModel):
-    query: str = Field(description="The search query keywords.")
+    query: str = Field(description="搜索查询的关键词。")
     search_type: str = Field(
-        description="""The type of search to perform. Options are:
-        - "google": Google search for current events and real-time information
-        - "dune": Search for Dune dashboards"""
+        description="""执行的搜索类型。选项包括：
+        - "google"：针对当前事件和实时信息的谷歌搜索
+        - "dune"：搜索 Dune 数据看板"""
     )
     gl: Optional[str] = Field(
-        default="us",
-        description="Country code for Google search, e.g., 'us', 'cn', 'jp'",
+        default="sg",
+        description="谷歌搜索的国家代码，例如 'us', 'cn', 'jp'。为适应中文大语言模型，本分支默认为 'sg'。",
     )
     hl: Optional[str] = Field(
-        default="en",
-        description="Language code for Google search, e.g., 'en', 'zh-cn', 'ja'",
+        default="zh-cn",
+        description="谷歌搜索的语言代码，例如 'en', 'zh-cn', 'ja'。为适应中文大语言模型，本分支默认为 'zh-cn'。",
     )
 
 
@@ -45,11 +45,11 @@ async def google_search(query: str, gl: str, hl: str) -> str:
 
 
 class SearchExpert(BaseTool):
-    name = "search"
+    name = "搜索助手"
     description = """
-    A versatile search tool that can perform various types of searches based on the query type:
-    - For queries related to charts, data visualization, or dashboards, use Dune search.
-    - For queries about project introductions, current events or real-time information, use Google search."""  # noqa: E501
+    一个多功能的搜索工具，能够根据查询类型执行多种类型的搜索：
+    - 对于与图表、数据可视化或仪表板相关的查询，请使用 Dune 搜索。
+    - 对于涉及项目介绍、当前事件或实时信息的查询，请使用谷歌搜索。"""  # noqa: E501
     args_schema: Type[SearchSchema] = SearchSchema
 
     def _run(
@@ -75,4 +75,4 @@ class SearchExpert(BaseTool):
         elif search_type == "dune":
             return await dune_search(query)
         else:
-            raise ValueError(f"Unknown search type: {search_type}")
+            raise ValueError(f"未定义的搜索类型：{search_type}")

@@ -19,29 +19,29 @@ from openagent.experts import (
 
 class ParamSchema(BaseModel):
     from_token: str = Field(
-        description="""extract the from-side cryptocurrencies mentioned in the query,
-like: "BTC", "ETH", "RSS3", "USDT", "USDC" and etc. Default is "ETH"."""
+        description = """从查询中提取提及的源加密货币，
+例如："BTC", "ETH", "RSS3", "USDT", "USDC" 等。默认为 "ETH"。"""
     )
 
     to_token: str = Field(
-        description="""extract the to-side cryptocurrencies mentioned in the query,
-like: "BTC", "ETH", "RSS3", "USDT", "USDC" and etc. Default is "ETH"."""
+        description = """从查询中提取提及的目标加密货币，
+例如："BTC", "ETH", "RSS3", "USDT", "USDC" 等。默认为 "ETH"。"""
     )
 
     chain_name: str = Field(
-        description="""extract the chain name mentioned in the query,
-like: "ethereum", "binance_smart_chain", "arbitrum" and etc. Default is "ethereum"."""
+        description = """从查询中提取提及的区块链名称，
+例如："ethereum", "binance_smart_chain", "arbitrum" 等。默认为 "ethereum"。"""
     )
 
     amount: str = Field(
-        description="""extract the amount of cryptocurrencies mentioned in the query,
-like: "0.1", "1", "10" and etc. Default is "1"."""
+        description = """从查询中提取提及的加密货币数量，
+例如："0.1", "1", "10" 等。默认为 "1"。"""
     )
 
 
 class SwapExpert(BaseTool):
-    name = "swap"
-    description = """Use this tool to swap cryptocurrencies.\n\
+    name = "交易助手"
+    description = """使用此工具进行加密货币交易。\n\
 """
     args_schema: Type[ParamSchema] = ParamSchema
     return_direct = False
