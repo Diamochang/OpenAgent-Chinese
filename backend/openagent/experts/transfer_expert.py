@@ -17,34 +17,33 @@ from openagent.experts import (
 
 class ParamSchema(BaseModel):
     to_address: str = Field(
-        description="""extract the address mentioned in the query,
-like : "0x1234567890abcdef1234567890abcdef12345678", "vitalk.eth" and etc.
-If the address does not start with '0x' and also does not end with '.eth',
-a '.eth' ending should be added to it.
+        description = """从查询中提取提及的地址，
+例如："0x1234567890abcdef1234567890abcdef12345678", "vitalik.eth" 等。
+如果地址既不以 '0x' 开头，也不以 '.eth' 结尾，则应在其后添加 ".eth"。
 """
     )
 
     token: str = Field(
-        description="""extract the cryptocurrencies mentioned in the query,
-like: "BTC", "ETH", "RSS3", "USDT", "USDC" and etc. Default is "ETH"."""
+        description = """从查询中提取提及的加密货币，
+例如："BTC", "ETH", "RSS3", "USDT", "USDC" 等。默认为 "ETH"。"""
     )
 
     chain_name: str = Field(
-        description="""extract the chain name mentioned in the query,
-like: "ethereum", "binance_smart_chain", "arbitrum" and etc. Default is "ethereum"."""
+        description = """从查询中提取提及的区块链名称，
+例如："ethereum", "binance_smart_chain", "arbitrum" 等。默认为 "ethereum"。"""
     )
 
     amount: str = Field(
-        description="""extract the amount of cryptocurrencies mentioned in the query,
-like: "0.1", "1", "10" and etc. Default is "1"."""
+        description = """从查询中提取提及的加密货币数量，
+例如："0.1", "1", "10" 等。默认为 "1"。"""
     )
 
 
 class TransferExpert(BaseTool):
-    name = "transfer"
-    description = """Use this tool to transfer cryptocurrencies. for example: \
-"transfer 1 ETH to 0x1234567890abcdef1234567890abcdef12345678", \
-"transfer 1 BTC to vitalk.eth" and etc. \
+    name = "转账助手"
+    description = """使用此工具进行加密货币转账。例如：\
+"转账 1 ETH 到 0x1234567890abcdef1234567890abcdef12345678", \
+"转账 1 BTC 到 vitalik.eth" 等。\
 """
     args_schema: Type[ParamSchema] = ParamSchema
     return_direct = False

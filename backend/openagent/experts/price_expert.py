@@ -11,12 +11,12 @@ from pydantic import BaseModel, Field
 
 
 class ARGS(BaseModel):
-    token: str = Field(description="token symbol")
+    token: str = Field(description="代币标识")
 
 
 class PriceExpert(BaseTool):
-    name = "price"
-    description = "use this tool to get the price of a token."
+    name = "价格助手"
+    description = "使用此工具获取代币的价格。"
     args_schema: Type[ARGS] = ARGS
 
     def _run(
@@ -31,7 +31,7 @@ class PriceExpert(BaseTool):
         token: str,
         run_manager: Optional[AsyncCallbackManagerForToolRun] = None,
     ) -> str:
-        return f"The price of {token} is {fetch_price(token)}"
+        return f"{token}的价格是：{fetch_price(token)}"
 
 
 _exchanges = [ccxt.binance(), ccxt.okx(), ccxt.gateio(), ccxt.mexc()]
@@ -44,5 +44,5 @@ def fetch_price(base: str, quote: str = "USDT") -> float:
             last = trades[0]["price"]
             return last
         except Exception as e:  # noqa
-            logger.warning(f"fetch price error from {exchange.id}: {e}")
-    raise Exception(f"no market found for {base}")
+            logger.warning(f"从{exchange.id}获取价格时发生错误：{e}")
+    raise Exception(f"未找到{base}的市场")
