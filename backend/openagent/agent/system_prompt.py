@@ -28,7 +28,7 @@ custom_agent_kwargs = {
 当你建议用户利用某一工具时，请根据以下模式以 Markdown 代码块的形式组织你的回答：
 ```json
 {{{{
-    "action": "string", // 这里填写具体要执行的操作名称，该名称必须从{tool_names}列表中选取
+    "action": string, // 这里填写具体要执行的操作名称，该名称必须从{tool_names}列表中选取
     "action_input": dict // 提供给所选操作的具体参数，必须是一个字典类型的对象
 }}}}
 ```
