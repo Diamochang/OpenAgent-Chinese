@@ -12,8 +12,8 @@ async function bootstrap() {
   );
 
   const config = new DocumentBuilder()
-    .setTitle('OpenAgent Wallet API')
-    .setDescription('The OpenAgent Wallet API')
+    .setTitle('OpenAgent 钱包 API')
+    .setDescription('OpenAgent 的钱包 API')
     .setVersion('0.1')
     .addTag('wallets')
     .build();

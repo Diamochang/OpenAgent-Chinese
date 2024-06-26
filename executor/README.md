@@ -1,11 +1,11 @@
-# OpenAgent Executor
+# OpenAgent 执行器
 
-The executor is the component that executes transactions on a blockchain. Itself is a smart contract wallet that can be controlled by the OpenAgent's Experts. You should ensure that the executor is secure and only the Experts can interact with it.
+执行器是区块链上执行交易的组件。它本身是一个智能合约钱包，可由 OpenAgent 的助手进行控制。你需要确保执行器的安全性，并且只有助手能够与之交互。
 
-The executor is designed this way so that on chain automation can be achieved (users do not have to sign each transaction manually when actions are triggered).
+执行器设计成这样，以便实现链上自动化（当触发操作时，用户无需手动签署每笔交易）。
 
-Other approaches are possible, such as using a KMS relayer to sign transactions on behalf of the user, but requires the user to have advanced knowledge of the KMS.
+还有其他可能的方法，例如使用 KMS 中继来代表用户签署交易，但这需要用户具备高级的 KMS 知识。
 
-## Environment Variables
+## 环境变量
 
-[.env.example](./.env.example) contains the environment variables required.
+[.env.example](./.env.example) 文件包含了所需的环境变量。
