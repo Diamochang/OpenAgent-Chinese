@@ -57,7 +57,7 @@ class NewSessionFolderDTO(BaseModel):
     parent_id: str | None = Field(
         example=None,
         default=None,
-        description="父 ID，如为空，则创建根文件夹"
+        description="父 ID，如为空，则创建根文件夹",
     )
 
     class Config:
@@ -100,11 +100,14 @@ class MoveSessionDTO(BaseModel):
     user_id: str = Field(description="用户 ID", example="jackma")
     from_session_id: str = Field(description="源会话 ID", example="1234567890")
     to_session_tab: SessionTab = Field(
-        description="目标标签页，收藏夹或最近。如果是最近，则忽略 to_session_id",
-        example="收藏夹",
+        description="目标标签页，收藏夹或最近。"
+        "如果是最近，则忽略 to_session_id",
+        example="favorite",
     )
     to_session_id: str | None = Field(
-        description="目标父会话 ID，仅当目标标签页为收藏夹时有效。如为空，则移动到根文件夹",
+        description="目标父会话 ID，仅当"
+        "目标标签页为收藏夹时有效。如为空，"
+        "则移动到根文件夹",
         example="0987654321",
         default=None,
     )

@@ -5,60 +5,57 @@ from pydantic import BaseModel, Field
 
 
 class TransferDTO(BaseModel):
-    user_id: str = Field(description="user id", example="clnx2bsgi000008l68gxi8q72")
-    task_id: str = Field(description="task id", example="1")
-    executor_id: int = Field(description="executor id", example=1)
+    user_id: str = Field(description="用户 ID", example="clnx2bsgi000008l68gxi8q72")
+    task_id: str = Field(description="任务 ID", example="1")
+    executor_id: int = Field(description="执行者 ID", example=1)
     to_address: str = Field(
-        description="address to transfer",
+        description="转账至的地址",
         example="0xFcf62726dbf3a9C2765f138111AA04Bf50bD67D6",
     )
-    amount: str = Field(description="amount to transfer", example="0.001")
+    amount: str = Field(description="转账金额", example="0.001")
     token_address: str = Field(
-        description="token address",
+        description="代币合约地址",
         example="0x4d2bf3A34a2311dB4b3D20D4719209EDaDBf69b6",
     )
-    token: str = Field(description="token", example="ETH")
+    token: str = Field(description="代币类型", example="ETH")
     logoURI: str
     decimals: int
 
 
 class ConfirmTransferDTO(BaseModel):
-    user_id: str = Field(description="user id", example="clnx2bsgi000008l68gxi8q72")
-    task_id: str = Field(description="task id", example="1")
-    executor_id: int = Field(description="executor id", example=1)
+    user_id: str = Field(description="用户 ID", example="clnx2bsgi000008l68gxi8q72")
+    task_id: str = Field(description="任务 ID", example="1")
+    executor_id: int = Field(description="执行者 ID", example=1)
     to_address: str = Field(
-        description="address to transfer",
+        description="转账至的地址",
         example="0xFcf62726dbf3a9C2765f138111AA04Bf50bD67D6",
     )
-    amount: str = Field(description="amount to transfer", example="0.001")
+    amount: str = Field(description="转账金额", example="0.001")
     token_address: str = Field(
-        description="token address",
+        description="代币合约地址",
         example="0x4d2bf3A34a2311dB4b3D20D4719209EDaDBf69b6",
     )
 
 
 class CancelTransferDTO(BaseModel):
-    user_id: str = Field(description="user id", example="clnx2bsgi000008l68gxi8q72")
-    task_id: str = Field(description="task id", example="1")
+    user_id: str = Field(description="用户 ID", example="clnx2bsgi000008l68gxi8q72")
+    task_id: str = Field(description="任务 ID", example="1")
 
 
 class TransferQueryDTO(BaseModel):
-    executor_id: int = Field(description="executor id", example=1)
+    executor_id: int = Field(description="执行者 ID", example=1)
     to_address: str = Field(
-        description="address to transfer",
+        description="转账至的地址",
         example="0xFcf62726dbf3a9C2765f138111AA04Bf50bD67D6",
     )
-    amount: str = Field(description="amount to transfer", example="0.001")
+    amount: str = Field(description="转账金额", example="0.001")
     token_address: str = Field(
-        description="token address",
+        description="代币合约地址",
         example="0x4d2bf3A34a2311dB4b3D20D4719209EDaDBf69b6",
     )
-    token: str = Field(description="token", example="ETH")
-    logoURI: str | None = Field(
-        description="logo uri", example="https://li.quest/logo.png"
-    )
-    decimals: int | None = Field(description="decimals", example=18)
-
+    token: str = Field(description="代币类型", example="ETH")
+    logoURI: str | None = Field(description="Logo 的 URI", example="https://li.quest/logo.png")
+    decimals: int | None = Field(description="小数位数", example=18)
 
 class TaskStatus(str, Enum):
     idle = "idle"

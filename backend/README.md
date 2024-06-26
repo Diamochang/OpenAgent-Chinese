@@ -1,39 +1,39 @@
-# OpenAgent Backend
+# OpenAgent 后端
 
-## Development
+## 开发
 
-1 . Install dependencies
+1. 安装依赖项
 
 ```bash
 poetry shell
 poetry install
 ```
 
-2. Complete the environment variables
+2. 配置环境变量
 
-Copy the .env.example file to .env.local and fill in the environment variables.
+将 `.env.example` 文件复制为 `.env.local`，并填写环境变量值。
 
-3. Bring up the containers
+3. 启动容器
 
 ```bash
 docker compose up -d
 ```
 
-4. Run the application
+4. 运行应用程序
 
 ```bash
 python main.py
 ```
 
-### Add a New Expert
+### 添加新助手
 
-1. Add your Expert under [openagent/experts](./openagent/experts) with the logic to interact with external data sources and corresponding prompts. The directory contains some example Experts to get you started.
-2. Add the Expert in [openagent/agent/function_agent.py](./openagent/agent/function_agent.py) to enable it, and you are done.
+1. 在 [openagent/experts](./openagent/experts) 目录下添加你的助手，包含与外部数据源交互的逻辑及相应的提示信息。该目录中含有一些示例助手，可帮助你快速开始。
+2. 在 [openagent/agent/function_agent.py](./openagent/agent/function_agent.py) 中注册你的助手以启用它，之后即完成配置。
 
-## Deployment
+## 部署
 
-[Dockerfile](./Dockerfile) and [docker-compose.yml](./docker-compose.yml) provide a basic setup for deployment.
+自带的 [Dockerfile](./Dockerfile) 和 [docker-compose.yml](./docker-compose.yml) 文件为部署提供了基本设置。
 
-## Environment Variables
+## 环境变量
 
-[.env.example](./.env.example) contains the environment variables required.
+[.env.example](./.env.example) 文件中包含了所需的所有环境变量。

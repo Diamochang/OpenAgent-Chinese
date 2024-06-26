@@ -40,8 +40,8 @@ class ParamSchema(BaseModel):
 
 
 class SwapExpert(BaseTool):
-    name = "交易助手"
-    description = """使用此工具进行加密货币交易。\n\
+    name = "交换助手"
+    description = """使用此工具进行加密货币交换。\n\
 """
     args_schema: Type[ParamSchema] = ParamSchema
     return_direct = False

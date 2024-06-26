@@ -43,12 +43,12 @@ def fetch_feeds(
         response = requests.request("GET", url, headers=headers, data=payload)
 
         if response.status_code != 200:
-            raise Exception(f"Failed to fetch feeds: {response.text}")
+            raise Exception(f"获取订阅源失败：{response.text}")
 
         return json.loads(response.text)
 
     try:
         return _fetch_feeds()
     except Exception as e:
-        logger.error(f"Failed to fetch feeds from {platform}: {e}")
+        logger.error(f"从 {platform} 获取订阅源失败：{e}")
         return {}
