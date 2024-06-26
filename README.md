@@ -1,70 +1,68 @@
 <!-- markdownlint-disable -->
 <p align="center">
-  <img width="180" src="./OpenAgent.svg" alt="OpenAgent logo">
+  <img width="180" src="./OpenAgent.svg" alt="OpenAgent 标志">
 </p>
 <p align="center">
-  <a href="https://link.rss3.io/x"><img src="https://img.shields.io/twitter/follow/rss3_?color=%230072ff" alt="follow RSS3 on X"></a>
-  <a href="https://link.rss3.io/discord"><img src="https://img.shields.io/badge/chat-discord-blue?style=flat&logo=discord&color=%230072ff" alt="Join RSS3 Discord"></a>
+  <a href="https://link.rss3.io/x"><img src="https://img.shields.io/twitter/follow/rss3_?color=%230072ff" alt="在 X（原 Twitter）上关注 RSS3"></a>
+  <a href="https://link.rss3.io/discord"><img src="https://img.shields.io/badge/chat-discord-blue?style=flat&logo=discord&color=%230072ff" alt="加入 RSS3 的 Discord"></a>
   <!-- add NPM and other badges when needed -->
 </p>
 <!-- markdownlint-enable -->
 
-# OpenAgent Framework
+# OpenAgent 框架
 
-OpenAgent is a framework for building AI applications leveraging the power of blockchains and RSS3 Network.
+OpenAgent 是一个框架，用于构建利用区块链和 RSS3 网络之神力的 AI 应用程序。
 
-The framework consists of 3 main components that are deployed together to form a complete application.
+该框架由三个主要组件组成，它们一起部署以形成一个完整的应用程序。
 
-## Backend: LLM, Experts
+## 后端：LLM，助手系统
 
-A set of APIs for responding to requests from the frontend. It leverages LangChain to offer interoperability between different LLMs.
+一组 API，用于响应来自前端的请求。它利用 Langchain 来提供不同 LLMs 之间的互操作性。
 
-It leverages the power of RSS3 Network to retrieve knowledge and feed into designated Experts.
+它利用 RSS3 网络来检索知识并输入到指定的助手系统中。
 
-### LLM Compatibility
+### LLM 兼容性
 
-Theoretically, OpenAgent is compatible with any LLMs with function calling capability.
-We encourage you to test with your chosen LLMs and contribute to the compatibility lists below.
-Here we provide a list of LLMs tested to be sufficiently intelligent for the purpose:
+理论上，OpenAgent 可以与任何具有函数调用功能的 LLMs 兼容。
+我们鼓励您使用所选的 LLMs 进行测试，并为下面的兼容性列表做出贡献。
+这里我们提供了一份经过测试，智能水平足以满足需求的 LLMs 列表：
 
-#### Open Source LLMs
+#### 开源 LLMs
 
-| Open Source LLMs    | Performance |
-|---------------------|-------------|
-| llama3              | ★★★★☆   |
-| codellama           | ★★★☆☆   |
-| gemma               | ★★★☆☆   |
-| aya                 | ★★☆☆☆   |
-| mistral             | ★★☆☆☆   |
-| deepseek-coder      | ★☆☆☆☆   |
-| solar               | ★☆☆☆☆   |
-| llava               | ★☆☆☆☆   |
-| phi3                | ★☆☆☆☆   |
+| 开源LLMs    | 性能评分 |
+|-------------|----------|
+| llama3      | ★★★★☆   |
+| codellama   | ★★★☆☆   |
+| gemma       | ★★★☆☆   |
+| aya         | ★★☆☆☆   |
+| mistral     | ★★☆☆☆   |
+| deepseek-coder | ★☆☆☆☆ |
+| solar       | ★☆☆☆☆   |
+| llava       | ★☆☆☆☆   |
+| phi3        | ★☆☆☆☆   |
 
+#### 专有 LLMs
 
-#### Proprietary LLMs
+| 专有LLMs    | 性能评分 |
+|-------------|----------|
+| gpt-3.5-turbo | ★★★★★   |
+| gpt-4-turbo   | ★★★★★   |
+| gpt-4o        | ★★★★★   |
+| gemini-1.5-flash | ★★★★☆ |
+| gemini-1.5-pro  | ★★★★☆ |
 
-| Proprietary LLMs    | Performance |
-|---------------------|-------------|
-| gpt-3.5-turbo       | ★★★★★   |
-| gpt-4-turbo         | ★★★★★   |
-| gpt-4o              | ★★★★★   |
-| gemini-1.5-flash    | ★★★★☆   |
-| gemini-1.5-pro      | ★★★★☆   |
+更多开发和部署信息，请参见 [backend/README.md](backend/README.md)。
 
+## 前端：客户端
 
-See [backend/README.md](backend/README.md) for more information on development and deployment.
+一个示例 Web 应用程序，作为客户端，使用户能够与后端进行交互。
 
-## Frontend: Client
+更多开发和部署信息，请参见 [frontend/README.md](frontend/README.md)。
 
-A sample web application that serves and a Client to enable user interactions with the backend.
+## 执行器
 
-See [frontend/README.md](frontend/README.md) for more information on development and deployment.
+一组 API，用于在链上执行和提交交易。在所有情况下都应加以限制，以防未经授权的访问。
 
-## Executor
+此外，存储库还包含一组示例智能合约，需要在使用执行器之前部署。更多相关信息，请参见 [executor/contracts/README.md](executor/contracts/README.md)。
 
-A set of APIs for executing and submitting transactions on chain. It should be gated under all circumstances to prevent unauthorized access.
-
-In addition, the repository also contains a set of sample smart contracts that need to be deployed before you can use the Executor. See [executor/contracts/README.md](executor/contracts/README.md) for more information.
-
-See [executor/README.md](executor/README.md) for more information on development and deployment.
+关于开发和部署的更多信息，请参阅 [executor/README.md](executor/README.md)。
