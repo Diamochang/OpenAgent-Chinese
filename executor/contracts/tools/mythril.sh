@@ -2,7 +2,7 @@
 #set -x
 
 if [ ! -d "src" ]; then
-	echo "error: script needs to be run from project root './tools/mythril.sh'"
+	echo "错误：脚本需要在项目根目录下运行 './tools/mythril.sh'"
 	exit 1
 fi
 

@@ -2,7 +2,7 @@
 #set -x
 
 if [ ! -d "src" ]; then
-	echo "error: script needs to be run from project root './tools/checkUpgradeable.sh'"
+	echo "错误：脚本需要在项目根目录下运行 './tools/checkUpgradeable.sh'"
 	exit 1
 fi
 
@@ -39,12 +39,12 @@ lines=$(sed -n '$=' "$file")
 if [ "$lines" -gt 2 ]
 then
   echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-  echo "slither-check failed"
+  echo "slither-check 未通过"
   cat "$file"
   echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
   exit 255
 else
   echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
-  echo "slither-check done"
+  echo "slither-check 已完成"
   echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
 fi

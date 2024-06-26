@@ -2,7 +2,7 @@
 set -x
 
 if [ ! -d "src" ]; then
-	echo "error: script needs to be run from project root './tools/checkStorageLayout.sh'"
+	echo "错误：脚本需要在项目根目录下运行 './tools/checkStorageLayout.sh'"
 	exit 1
 fi
 
@@ -16,12 +16,12 @@ do
   diff -bB ./tools/storageLayout/${contract}-storage-layout.txt ${file}  > ${diffResult}
   if cat ${diffResult} | grep "^<" >/dev/null
   then
-    echo "check ${contract} failed!"
+    echo "${contract} 检查失败！"
     cat ${diffResult}
     exit 255
   else
     cp ${file} ./tools/storageLayout/${contract}-storage-layout.txt
   fi
 done
-echo "check storage layout done!"
+echo "存储布局检查完成！"
 echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"

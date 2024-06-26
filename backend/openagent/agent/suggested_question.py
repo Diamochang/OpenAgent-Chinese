@@ -14,27 +14,28 @@ load_dotenv()
 async def agen_suggested_questions(user_id: str, history: str) -> list[str]:
     prompt = PromptTemplate(
         template="""
-Suggest follow up questions based on the user chat history.
+根据用户聊天记录建议后续问题。
 
-Return Format:
-["question1", "question2", "question3"]
+返回格式：
+["问题1", "问题2", "问题3"]
 
-Example:
+示例：
 
-Q:
-eth price?
-A:
-["What is the price of BTC?", "What is ETH?", "Can you list some hot tokens on Ethereum?"]
+Q：
+ETH 价格？
+A：
+["BTC价格是多少？", "什么是ETH？", "你能列举一些以太坊上的热门代币吗？"]
 
-Q:
-what is the price of BTC?
-A:
-["What is the price of ETH?", "What is the price of BTC?", "Can you list some hot tokens on Ethereum?"]
+Q：
+比特币价格是多少？
+A：
+["ETH价格是多少？", "比特币价格是多少？", "你能列举一些以太坊上的热门代币吗？"]
 
 -----------------------------------------------------------------
-Q:
+
+Q：
 {history}
-A:""",  # noqa
+A：""",  # noqa
         input_variables=["history"],
     )
     if settings.MODEL_NAME.startswith("gpt"):
@@ -46,12 +47,12 @@ A:""",  # noqa
     else:
         model = ChatOllama(model=settings.MODEL_NAME, base_url=settings.LLM_API_BASE)
     interpreter = LLMChain(llm=model, prompt=prompt)
-    logger.info(f"start to generate suggested questions based on history: {history}")
+    logger.info(f"开始基于以下历史记录生成问题建议：{history}")
     output = await interpreter.arun(
         history=history,
     )
-    logger.info(f"suggested questions generated: {output}")
+    logger.info(f"建议问题已生成：{output}")
     # parse output, it's json array str
     lst = json.loads(output)
-    logger.info(f"suggested questions parsed: {lst}")
+    logger.info(f"建议问题已解析：{lst}")
     return lst

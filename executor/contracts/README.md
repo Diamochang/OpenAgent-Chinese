@@ -1,22 +1,22 @@
-# OpenAgent Executor Contracts
+# OpenAgent 执行器合约
 
-## Usage
+## 使用说明
 
-### Build
+### 构建
 
 ```shell
 forge build
 ```
 
-### Test
+### 测试
 
 ```shell
 forge test
 ```
 
-### Deploy
+### 部署
 
-Set both `proxyAdminOwner` and `manager` in JSON files under [deploy-config](./deploy-config) directory.
+在 [deploy-config](./deploy-config) 目录下的 JSON 文件中设置 `proxyAdminOwner` 和 `manager` 两个参数。
 
 ```shell
 make deploy-sepolia
