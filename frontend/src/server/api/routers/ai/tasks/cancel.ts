@@ -37,7 +37,7 @@ export const cancelApi = protectedProcedure
 				throw new TRPCError({
 					cause: err,
 					code: "INTERNAL_SERVER_ERROR",
-					message: err.message || "Internal Server Error",
+					message: err.message || "服务器内部错误",
 				});
 			});
 

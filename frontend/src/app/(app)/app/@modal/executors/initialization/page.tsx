@@ -44,21 +44,21 @@ export default function Page() {
 		return (
 			<>
 				<Text fw="bold" my="xs">
-					🚀 Welcome to your very own{" "}
+					🚀 欢迎使用你自己的{" "}
 					<Text fw="bolder" span variant="gradient">
-						OpenAgent Executor
+						OpenAgent 执行器
 					</Text>
-					! 🌟
+					！🌟
 				</Text>
 
 				<Text my="xs">
-					OpenAgent Executor is an{" "}
+					OpenAgent 执行器是一个{" "}
 					<Text fw="bold" span>
-						Account Abstraction (AA) Smart Contract Executor
+						账户抽象（AA）智能合约执行器
 					</Text>{" "}
-					that is a smarter, more secure, and more convenient way to interact
-					with the blockchain. Together with OpenAgent&apos;s AI power, you can
-					enjoy a seamless experience in the world of Web3.
+					，是一种更智能、更安全、更便捷的
+					区块链交互方式。借助 OpenAgent 的人工智能功能，你可以
+					在 Web3 的世界中享受无缝体验。
 				</Text>
 
 				<Anchor
@@ -69,13 +69,13 @@ export default function Page() {
 					size="xs"
 					target="_blank"
 				>
-					Know more about the detail.
+					了解更多详情。
 				</Anchor>
 
 				{hasExecutors && (
 					<Text c="red">
-						You already have a OpenAgent Executor. So you can&apos;t create
-						another for now.
+						你已经有一个 OpenAgent 执行器，所以暂时不能再创建
+						另一个。
 					</Text>
 				)}
 
@@ -87,7 +87,7 @@ export default function Page() {
 							executorCreate.mutate();
 						}}
 					>
-						✨ Create Executor
+						✨ 创建执行器
 					</Button>
 				</Flex>
 			</>
@@ -99,12 +99,12 @@ export default function Page() {
 		return (
 			<>
 				<Text fw="bold" my="xs">
-					🎉 Congratulations! 🎉
+					🎉 祝贺！ 🎉
 				</Text>
 
 				<Text my="xs">
-					You have successfully created your OpenAgent Executor. You can now
-					start interacting with the blockchain with AI power!
+					你已成功创建 OpenAgent 执行器。现在你可以
+					开始借助人工智能的神力与区块链进行交互！
 				</Text>
 
 				{executor && (
@@ -122,7 +122,7 @@ export default function Page() {
 							close();
 						}}
 					>
-						👍 Got it!
+						👍 明白了！
 					</Button>
 				</Flex>
 			</>

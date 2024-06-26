@@ -8,8 +8,8 @@ import { redirect } from "next/navigation";
 import { UserAuthForm } from "./user-auth-form.client";
 
 export const metadata: Metadata = {
-	description: "Login to your account",
-	title: "Login",
+	description: "登录你的账户",
+	title: "登录",
 };
 
 // million-ignore
@@ -28,19 +28,19 @@ export default async function Page({
 			<Link className="absolute left-4 top-4 md:left-8 md:top-8" href="/">
 				<>
 					<IconArrowLeft className="mr-2 size-4" />
-					Back
+					返回
 				</>
 			</Link>
 			<div className="mx-auto flex w-full flex-col justify-center space-y-6 sm:w-[400px]">
 				<div className="flex flex-col space-y-2 text-center">
 					<IconLogo className="mx-auto size-10" />
 					<h1 className="text-2xl font-semibold tracking-tight">
-						Welcome to OpenAgent
+						欢迎来到 OpenAgent
 					</h1>
 					<p className="text-sm">
-						Enter your email to sign in to your account,
+						输入电子邮件地址以登录你的账户，
 						<br />
-						If you don&apos;t have an account, we&apos;ll create one for you.
+						如果没有账户，我们会为你创建。
 					</p>
 				</div>
 				<UserAuthForm />

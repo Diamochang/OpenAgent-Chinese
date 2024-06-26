@@ -53,7 +53,7 @@ function Hero() {
 			<Input />
 
 			<div className="pointer-events-none mt-5 text-3xl">
-				AI that <span className="text-red-500">executes</span>.
+				一个<span className="text-red-500">会执行</span>的 AI。
 			</div>
 
 			{/* <div className="pointer-events-none mt-5 text-gray-200">Coming soon.</div> */}
@@ -69,7 +69,7 @@ function Hero() {
 				size="lg"
 				variant="gradient"
 			>
-				START FREE TRIAL
+				免费尝试
 			</Button>
 		</div>
 	);

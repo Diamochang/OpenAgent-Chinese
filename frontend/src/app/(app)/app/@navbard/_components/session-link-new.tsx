@@ -15,10 +15,10 @@ export function SessionLinkNew() {
 		<NavLink
 			active={isNewSession}
 			// label={session.title ?? session.session_id + "12312312312312"}
-			label={<Text truncate="end">New Chat</Text>}
+			label={<Text truncate="end">新建对话</Text>}
 			leftSection={<IconPlus size="1.25rem" />}
 			onClick={handleClick}
-			title={"New Chat"}
+			title={"新建对话"}
 		/>
 	);
 }

@@ -31,7 +31,7 @@ export const detailApi = protectedProcedure
 					return res.body.json() as Promise<AiTaskItem>;
 				} else if (res.statusCode === 400) {
 					const errorRes = (await res.body.json()) as AiSessionErrorResponse;
-					if (errorRes.message === "task not found") {
+					if (errorRes.message === "任务未找到") {
 						return null;
 					}
 				}
@@ -42,7 +42,7 @@ export const detailApi = protectedProcedure
 				throw new TRPCError({
 					cause: err,
 					code: "INTERNAL_SERVER_ERROR",
-					message: "Internal Server Error",
+					message: "服务器内部错误",
 				});
 			});
 

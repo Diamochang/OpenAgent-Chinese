@@ -31,7 +31,7 @@ export const executorApi = protectedProcedure
 				throw new TRPCError({
 					cause: err,
 					code: "INTERNAL_SERVER_ERROR",
-					message: "Internal Server Error",
+					message: "服务器内部错误",
 				});
 			});
 

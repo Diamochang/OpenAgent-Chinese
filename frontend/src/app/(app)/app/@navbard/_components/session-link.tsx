@@ -94,7 +94,7 @@ export function SessionLink({ session }: { session: AiSessionListItem }) {
 					sessionId: session.session_id,
 				});
 			},
-			title: "Delete",
+			title: "删除",
 		},
 		{
 			icon: <IconPencil size="1rem" />,
@@ -102,7 +102,7 @@ export function SessionLink({ session }: { session: AiSessionListItem }) {
 			onClick: () => {
 				setShowRename(true);
 			},
-			title: "Rename",
+			title: "重命名",
 		},
 		{ key: "divider" },
 		{
@@ -113,7 +113,7 @@ export function SessionLink({ session }: { session: AiSessionListItem }) {
 					`${window.location.origin}/app/sessions/${session.session_id}`
 				);
 			},
-			title: "Copy link",
+			title: "复制链接",
 		},
 	]);
 

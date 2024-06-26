@@ -17,7 +17,7 @@ function ExecutorsDropdownWithSuspense() {
 		return (
 			<Stack align="center">
 				<Text c="dimmed" size="xs">
-					No executors yet.
+					这里暂时没有任何执行器。
 				</Text>
 
 				<Button
@@ -26,7 +26,7 @@ function ExecutorsDropdownWithSuspense() {
 					onClick={() => setExecutorDropdownOpened(false)}
 					scroll={false}
 				>
-					Create Executor
+					创建执行器
 				</Button>
 			</Stack>
 		);

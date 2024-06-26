@@ -1,34 +1,34 @@
-# OpenAgent Frontend
+# OpenAgent 前端
 
-## Development
+## 开发指南
 
-### 1. Install Dependencies
+### 1. 安装依赖
 
 ```bash
 pnpm install
 ```
 
-### 2. Setup the Database
+### 2. 数据库配置
 
-Start the postgres database in docker locally:
+启动本地 PostgreSQL 数据库（通过 Docker）:
 
 ```bash
 pnpm run docker:db
 ```
 
-Migrate the local database:
+执行数据库迁移:
 
 ```bash
 pnpm run prisma:migrate:dev
 ```
 
-### 3. Complete the environment variables
+### 3. 配置环境变量
 
-Copy the `.env.example` file to `.env.local` and fill in the environment variables.
+将 `.env.example` 文件复制为 `.env.local`，并填写环境变量值。
 
-#### 3.1. Auth
+#### 3.1 认证设置
 
-The authentication is done with [Auth.js](https://authjs.dev/). The following environment variables are required to let users sign in with their Google, Discord, and email accounts.
+使用 [Auth.js](https://authjs.dev/) 进行身份验证。需设置以下环境变量以允许用户通过谷歌、Discord 和邮箱账户登录。
 
 ```bash
 NEXTAUTH_URL="http://localhost:3000"
@@ -41,11 +41,11 @@ AUTH_DISCORD_CLIENT_ID=""
 AUTH_DISCORD_CLIENT_SECRET=""
 ```
 
-You can refer to the [Auth.js documentation](https://authjs.dev/) for more information. For example, the [Google Provider](https://authjs.dev/reference/core/providers/google#resources).
+更多详情请参考 [Auth.js 文档](https://authjs.dev/)，例如 [Google 身份提供商文档](https://authjs.dev/reference/core/providers/google#resources)。
 
-#### 3.2. Database
+#### 3.2 数据库连接
 
-The database is managed with [Prisma](https://www.prisma.io/). The following environment variables are required to connect to the database.
+使用 [Prisma](https://www.prisma.io/) 管理数据库。需要以下环境变量连接数据库。
 
 ```bash
 POSTGRES_USER=postgres
@@ -56,44 +56,40 @@ DB_PORT=5432
 DB_SCHEMA=public
 ```
 
-These environment variables are used in the `prisma/schema.prisma` file to connect to the database. It's set by default in `.env.example`, update the values according to your environment.
+这些环境变量在 `prisma/schema.prisma` 文件中用于数据库连接。默认值已设于 `.env.example` 中，请根据实际情况调整。
 
-#### 3.3 Backend API
+#### 3.3 后端 API 配置
 
-The backend API is used to fetch data from server. The following environment variables are required to connect to the backend API.
+后端 API 用于从服务器获取数据。需要以下环境变量连接后端 API。
 
 ```bash
 BACKEND_URL="https://YOUR_BACKEND_URL"
 API_EXECUTOR_URL="https://YOUR_API_EXECUTOR_URL"
 ```
 
-#### 3.4 Wallet
+#### 3.4 钱包集成
 
-The wallet is used to sign transactions and interact with the blockchain. The following environment variables are required to connect to the wallet.
+钱包用于签署交易并与区块链交互。需设置以下环境变量以连接钱包。
 
 ```bash
 NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID=
 NEXT_PUBLIC_CHAIN_ID=
 ```
 
-Note: For `NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID`, every dApp that relies on WalletConnect now needs to obtain a projectId from [WalletConnect Cloud](https://cloud.walletconnect.com/sign-in). This is absolutely free and only takes a few minutes.
+注意：对于 `NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID`，依赖 WalletConnect 的每个 dApp 现在都需要从 [WalletConnect Cloud](https://cloud.walletconnect.com/sign-in) 获取项目ID。这是完全免费的，只需几分钟即可完成。
 
-For `NEXT_PUBLIC_CHAIN_ID`, you can refer to the [Chainlist](https://www.chainlist.org/) for the chain ID of the blockchain you want to connect to. For example, in production, it should be `1` for mainnet; and in development, it could be `11155111` for Sepolia testnet.
+关于 `NEXT_PUBLIC_CHAIN_ID`，可参考 [Chainlist](https://www.chainlist.org/) 获取你想要连接的区块链的链 ID。例如，在生产环境中，主网应设为 `1`；而在开发环境中，Sepolia 测试网应设为 `11155111`。
 
-### 4. Run the Development Server
-
-Run the development server:
+### 4. 启动开发服务器
 
 ```bash
 pnpm run dev
 ```
 
-The frontend is running at [http://localhost:3000](http://localhost:3000).
+前端应用将在 [http://localhost:3000](http://localhost:3000) 上运行。本项目采用 [Next.js](https://nextjs.org/) 框架，更多详情请查阅 [Next.js 文档](https://nextjs.org/docs)。
 
-The framework used is [Next.js](https://nextjs.org/). You can refer to the [documentation](https://nextjs.org/docs) for more information.
+## 部署
 
-## Deployment
+你可以将前端部署到 Vercel、Netlify 或任何支持 Next.js 的平台。项目同时提供了一个 Dockerfile 供你参考。
 
-You can deploy the frontend to Vercel, Netlify, or any other platforms that support Next.js. a Dockerfile is also provided for your reference.
-
-Before deploying, you may want to complete the environment variables in the `.env.production` file and set up the deployment configuration.
+部署前，请确保完成 `.env.production` 文件中的环境变量配置，并设置相应的部署配置。

@@ -14,7 +14,7 @@ export function SessionTitle({
 	const { sessionTitle } = useAiSessionTitle({ sessionId });
 	const [typingWord, setTypingWord] = useState("");
 
-	const title = isNewChat ? "New Chat" : sessionTitle;
+	const title = isNewChat ? "新对话" : sessionTitle;
 
 	useEffect(() => {
 		if (!title) return;

@@ -21,8 +21,8 @@ export function TaskListFilter() {
 		<SegmentedControl
 			className="flex-1"
 			data={[
-				{ label: "Current Chat", value: "current" },
-				{ label: "All", value: "all" },
+				{ label: "当前对话", value: "current" },
+				{ label: "全部对话", value: "all" },
 			]}
 			fullWidth
 			onChange={(e) => setActiveTab(e as any)}

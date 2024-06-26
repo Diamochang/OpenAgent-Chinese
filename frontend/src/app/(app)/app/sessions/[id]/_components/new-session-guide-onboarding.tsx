@@ -43,12 +43,12 @@ export function NewSessionGuideOnboarding({
 						initial={{ opacity: 0, scale: 0.9, y: 10 }}
 						onClick={() => {
 							ask({
-								body: "Hello, Let's get started!",
+								body: "你好，让我们开始吧！",
 							});
 							hide();
 						}}
 					>
-						Hello, Let&apos;s get started!
+						你好，让我们开始吧！
 					</Card>
 				)}
 			</AnimatePresence>

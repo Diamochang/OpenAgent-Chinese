@@ -22,11 +22,11 @@ export function LayoutBurger() {
 		<>
 			{/* mobile */}
 			<Tooltip
-				label={mobile[0] ? "Close Navbar" : "Open Navbar"}
+				label={mobile[0] ? "关闭导航栏" : "打开导航栏"}
 				openDelay={500}
 			>
 				<Burger
-					aria-label="Toggle navigation"
+					aria-label="展开导航"
 					hiddenFrom="sm"
 					onClick={(e) => {
 						e.stopPropagation();
@@ -39,11 +39,11 @@ export function LayoutBurger() {
 
 			{/* desktop */}
 			<Tooltip
-				label={desktop[0] ? "Close Navbar" : "Open Navbar"}
+				label={desktop[0] ? "关闭导航栏" : "打开导航栏"}
 				openDelay={500}
 			>
 				<Burger
-					aria-label="Toggle navigation"
+					aria-label="展开导航"
 					hidden={desktop[0]}
 					onClick={(e) => {
 						e.stopPropagation();

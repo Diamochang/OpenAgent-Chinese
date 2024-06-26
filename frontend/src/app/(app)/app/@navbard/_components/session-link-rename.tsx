@@ -54,7 +54,7 @@ export function SessionLinkRename({
 				onBlur={handleSubmit}
 				onChange={setTitle}
 				onKeyDown={getHotkeyHandler([["Enter", handleSubmit]])}
-				placeholder="Title..."
+				placeholder="标题..."
 				value={title}
 			/>
 		</div>

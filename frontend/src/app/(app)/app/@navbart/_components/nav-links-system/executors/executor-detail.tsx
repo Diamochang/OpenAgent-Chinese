@@ -19,7 +19,7 @@ function ExecutorDetailWithSuspense({ executorId }: { executorId: number }) {
 	return (
 		<Stack>
 			<div>
-				<Text fw="bold">Address</Text>
+				<Text fw="bold">地址</Text>
 				<Group gap="xs">
 					<ExecutorAddressAvatar
 						executorAddress={executor.executorAddress}
@@ -35,7 +35,7 @@ function ExecutorDetailWithSuspense({ executorId }: { executorId: number }) {
 			</div>
 
 			<div>
-				<Text fw="bold">Balance</Text>
+				<Text fw="bold">余额</Text>
 				{executor.balance.map((token) => (
 					<TokenBalance
 						balance={token.tokenBalance}

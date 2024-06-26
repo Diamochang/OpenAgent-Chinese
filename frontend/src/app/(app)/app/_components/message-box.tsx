@@ -54,7 +54,7 @@ export function MessageBox({ sessionId }: { sessionId: string }) {
 					disabled={!currentIdleTask}
 					label={
 						currentIdleTask
-							? "Complete or cancel the current task before asking another question."
+							? "在提出另一个问题之前，完成或取消当前任务。"
 							: null
 					}
 				>
@@ -77,7 +77,7 @@ export function MessageBox({ sessionId }: { sessionId: string }) {
 								}, 20);
 							}
 						}}
-						placeholder="Ask me anything..."
+						placeholder="问我什么都可以..."
 						rightSection={
 							<ActionIcon
 								disabled={!!currentIdleTask}

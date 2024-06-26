@@ -10,7 +10,7 @@ export function Settings() {
 			// }}
 			component={Link}
 			href="/app/settings"
-			label="Settings"
+			label="设置"
 			leftSection={<IconSettings size="1rem" stroke={1.5} />}
 			scroll={false}
 		/>

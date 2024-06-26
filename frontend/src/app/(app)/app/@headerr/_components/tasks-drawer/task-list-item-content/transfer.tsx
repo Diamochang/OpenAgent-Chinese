@@ -15,18 +15,18 @@ export function TaskListItemContentTransfer({
 	return (
 		<>
 			<Group>
-				<Label>From</Label>
+				<Label>发送者</Label>
 				<ExecutorAddressFromIdDisplay executorId={task.body.executor_id} />
 			</Group>
 			<Group>
-				<Label>To</Label>
+				<Label>接收者</Label>
 				<ExecutorAddressDisplay executorAddress={task.body.to_address} />
 			</Group>
 			<Group>
-				<Label>Amount</Label>
+				<Label>金额</Label>
 				<Group gap="xs">
 					<Image
-						alt="Token logo"
+						alt="代币标志"
 						h={rem(16)}
 						src={task.body.logoURI}
 						w={rem(16)}
@@ -39,7 +39,7 @@ export function TaskListItemContentTransfer({
 			</Group>
 			{task.hash && (
 				<Group>
-					<Label>Hash</Label>
+					<Label>哈希值</Label>
 					<TxHash hash={task.hash} />
 				</Group>
 			)}

@@ -106,7 +106,7 @@ export function UserMenu({ email, image, username }: UserMenuProps) {
 						signOut();
 					}}
 				>
-					Logout
+					登出
 				</Menu.Item>
 			</Menu.Dropdown>
 		</Menu>

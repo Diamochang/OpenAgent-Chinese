@@ -96,9 +96,9 @@ export function LayoutNavbar({ children }: { children: ReactNode }) {
 			<TooltipFloating
 				label={
 					<>
-						Drag to resize
+						拖动以调整大小
 						<br />
-						Click to close
+						点击以关闭
 					</>
 				}
 				position="right"

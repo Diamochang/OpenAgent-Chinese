@@ -6,8 +6,8 @@ export default function Page() {
 			<div
 				dangerouslySetInnerHTML={{
 					__html: `
-					<h1>OpenAgent Executor</h1>
-					<h2>What is OpenAgent Executor?</h2>
+					<h1>OpenAgent 执行器</h1>
+					<h2>什么是 OpenAgent 执行器？</h2>
 `,
 				}}
 			></div>

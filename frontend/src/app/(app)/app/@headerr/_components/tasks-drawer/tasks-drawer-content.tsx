@@ -29,7 +29,7 @@ export function TasksDrawerContent() {
 				<Stack align="center">
 					<Text>NO TASK</Text>
 					<Text c="dimmed" size="xs">
-						Try saying &ldquo;transfer 0.0001 ETH to...&rdquo;
+						尝试说 &ldquo;转 0.0001 ETH 给...&rdquo;
 					</Text>
 				</Stack>
 			</Center>

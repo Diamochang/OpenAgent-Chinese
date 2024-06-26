@@ -10,6 +10,6 @@ export function TaskListItemContent({ task }: { task: AiTaskItem }) {
 	if (isTaskTypeOf(task, "transfer")) {
 		return <TaskListItemContentTransfer task={task} />;
 	} else {
-		return <div>Unknown task type</div>;
+		return <div>未知任务类型</div>;
 	}
 }

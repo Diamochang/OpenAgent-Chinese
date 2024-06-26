@@ -45,15 +45,15 @@ export function UserAuthForm() {
 
 		if (!signInResult?.ok) {
 			return notifications.show({
-				message: "Your sign in request failed. Please try again.",
-				title: "Something went wrong.",
+				message: "你的登录请求失败。请再试一次。",
+				title: "啊哦，出问题了",
 				variant: "error",
 			});
 		}
 
 		return notifications.show({
-			message: "We sent you a login link. Be sure to check your spam too.",
-			title: "Check your email",
+			message: "我们向你发送了包含登录链接的电子邮件。请不要忘了检查垃圾邮件箱。",
+			title: "检查你的邮箱",
 		});
 	}
 
@@ -82,7 +82,7 @@ export function UserAuthForm() {
 					type="submit"
 				>
 					<IconMail />
-					&nbsp; Continue with Email
+					&nbsp; 使用电子邮件继续
 				</Button>
 			</form>
 
@@ -102,7 +102,7 @@ export function UserAuthForm() {
 					size="lg"
 				>
 					<IconBrandGoogle />
-					&nbsp; Continue with Google
+					&nbsp; 使用 Google 继续
 				</Button>
 
 				<Button
@@ -118,7 +118,7 @@ export function UserAuthForm() {
 					size="lg"
 				>
 					<IconBrandDiscord />
-					&nbsp; Continue with Discord
+					&nbsp; 使用 Discord 继续
 				</Button>
 			</Stack>
 		</Box>

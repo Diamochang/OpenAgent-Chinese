@@ -28,131 +28,130 @@ const iconStyle = { height: rem(24), width: rem(24) };
 const suggestedQuestions = [
 	{
 		icon: <IconCurrencyEthereum style={iconStyle} />,
-		plaintext: "Tell me about Ethereum.",
+		plaintext: "告诉我关于以太坊的信息。",
 		question: (
 			<>
-				Tell me about <Bold>Ethereum</Bold>.
+				告诉我关于<Bold>以太坊</Bold>的信息。
 			</>
 		),
 	},
 	{
 		icon: <IconCurrencyEthereum style={iconStyle} />,
-		plaintext: "What is the current price of ETH?",
+		plaintext: "当前 ETH 的价格是多少？",
 		question: (
 			<>
-				What is the <Bold>current price</Bold> of ETH?
+				当前 <Bold>ETH</Bold> 的价格是多少？
 			</>
 		),
 	},
 	{
 		icon: <IconFlame style={iconStyle} />,
-		plaintext: "Can you list some hot tokens?",
+		plaintext: "你能列出一些热门代币吗？",
 		question: (
 			<>
-				Can you list some <Bold>hot tokens</Bold>?
+				你能列出一些<Bold>热门代币</Bold>吗？
 			</>
 		),
 	},
 	{
 		icon: <IconFlame style={iconStyle} />,
-		plaintext: "Can you list some hot NFTs?",
+		plaintext: "你能列出一些热门 NFT 吗？",
 		question: (
 			<>
-				Can you list some <Bold>hot NFTs</Bold>?
+				你能列出一些<Bold>热门 NFT</Bold> 吗？
 			</>
 		),
 	},
 	{
 		icon: <IconActivity style={iconStyle} />,
-		plaintext: "What did vitalik.eth do recently?",
+		plaintext: "vitalik.eth 最近有什么动态？",
 		question: (
 			<>
-				What did <Bold>vitalik.eth</Bold> do recently?
+				<Bold>vitalik.eth</Bold> 最近有什么动态？
 			</>
 		),
 	},
 	{
 		icon: <IconLineHeight style={iconStyle} />,
-		plaintext: "What is the current block height?",
+		plaintext: "当前区块高度是多少？",
 		question: (
 			<>
-				What is the <Bold>current block height</Bold>?
+				当前<Bold>区块高度</Bold>是多少？
 			</>
 		),
 	},
 	{
 		icon: <IconGasStation style={iconStyle} />,
-		plaintext: "What is the current gas price?",
+		plaintext: "当前燃料费价格是多少？",
 		question: (
 			<>
-				What is the <Bold>current gas price</Bold>?
+				当前<Bold>燃料费价格</Bold>是多少？
 			</>
 		),
 	},
 	{
 		icon: <IconUsersGroup style={iconStyle} />,
-		plaintext: "List the most active users on Ethereum.",
+		plaintext: "列出以太坊上最活跃的用户。",
 		question: (
 			<>
-				List the <Bold>most active users</Bold> on Ethereum.
+				列出以太坊上<Bold>最活跃的用户</Bold>。
 			</>
 		),
 	},
 	{
 		icon: <IconQuestionMark style={iconStyle} />,
-		plaintext: "What is the difference between Arbitrum and Ethereum?",
+		plaintext: "Arbitrum 和以太坊之间的区别是什么？",
 		question: (
 			<>
-				What is the difference between <Bold>Arbitrum</Bold> and{" "}
-				<Bold>Ethereum</Bold>?
+				<Bold>Arbitrum</Bold> 和<Bold>以太坊</Bold>之间的区别是什么？
 			</>
 		),
 	},
 	{
 		icon: <IconQuestionMark style={iconStyle} />,
-		plaintext: "How can I get some ETH?",
+		plaintext: "我如何获取一些 ETH？",
 		question: (
 			<>
-				How can I get some <Bold>ETH</Bold>?
+				我如何获取一些 <Bold>ETH</Bold>？
 			</>
 		),
 	},
 	{
 		icon: <IconBrandAppstore style={iconStyle} />,
-		plaintext: "What are the top dapps in Ethereum?",
+		plaintext: "以太坊上顶级的去中心化应用有哪些？",
 		question: (
 			<>
-				What are the top <Bold>dapps</Bold> in Ethereum?
+				以太坊上顶级的<Bold>去中心化应用</Bold>有哪些？
 			</>
 		),
 	},
 	{
 		icon: <IconSearch style={iconStyle} />,
-		plaintext: "List some DeFi projects having the highest TVL.",
+		plaintext: "列出一些总锁定价值最高的去中心化金融项目。",
 		question: (
 			<>
-				List some <Bold>DeFi projects</Bold> having the highest TVL.
+				列出一些总锁定价值最高的<Bold>去中心化金融项目</Bold>。
 			</>
 		),
 	},
 	{
 		icon: <IconUser style={iconStyle} />,
-		plaintext: "Who is vitalik.eth on Ethereum?",
+		plaintext: "以太坊上的 vitalik.eth 是谁？",
 		question: (
 			<>
-				Who is <Bold>vitalik.eth</Bold> on Ethereum?
+				以太坊上的 <Bold>vitalik.eth</Bold> 是谁？
 			</>
 		),
 	},
 	{
 		icon: <IconMoodSmile style={iconStyle} />,
-		plaintext: "Who are you?",
-		question: <>Who are you?</>,
+		plaintext: "你是谁？",
+		question: <>你是谁？</>,
 	},
 	{
 		icon: <IconMoodSmile style={iconStyle} />,
-		plaintext: "Who built you?",
-		question: <>Who built you?</>,
+		plaintext: "谁创造了你？",
+		question: <>谁创造了你？</>,
 	},
 ];
 

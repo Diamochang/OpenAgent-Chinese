@@ -16,22 +16,22 @@ export function OnboardingModal() {
 			{({ close }) => (
 				<>
 					<Text my="md">
-						Hi! Welcome to use <IconLogo className="align-middle" size="1rem" />{" "}
-						OpenAgent.
+						你好！欢迎使用 <IconLogo className="align-middle" size="1rem" />{" "}
+						OpenAgent。
 					</Text>
 
 					<Text my="md">
-						OpenAgent can help you to manage your crypto assets and track your
-						portfolio.
+					OpenAgent 可帮助你管理加密资产并跟踪你的
+					投资组合。
 					</Text>
 
 					<Text my="md">
-						Let&apos;s get started by setting up your first{" "}
+						让我们开始吧，只需轻轻一点，就能设置你的第一个{" "}
 						<IconWallet className="align-middle" size="1rem" />
 						<Text fw={700} span>
-							executor
+							执行器
 						</Text>{" "}
-						with a simple click.
+						。
 					</Text>
 
 					<Button
@@ -48,7 +48,7 @@ export function OnboardingModal() {
 						}
 						size="md"
 					>
-						Create Executor
+						创建执行器
 					</Button>
 
 					<Button
@@ -59,11 +59,11 @@ export function OnboardingModal() {
 						size="md"
 						variant="subtle"
 					>
-						Do It Later
+						稍后创建
 					</Button>
 
 					<Text my="sm" size="xs">
-						*You can always create a executor later in the settings page.
+						* 你可以稍后在设置页面创建执行器。
 					</Text>
 				</>
 			)}

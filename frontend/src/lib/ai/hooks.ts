@@ -16,7 +16,7 @@ import {
 import { getNewSessionHref } from "./utils";
 
 export function useAskAi({
-	body = "hi, how are you?",
+	body = "你好，近况可好？",
 	messageId,
 	sessionId,
 }: {
